@@ -109,9 +109,13 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .sidebar-sticky {
     position: absolute;
-    right:  1rem;
-    bottom: 1rem;
-    left:   1rem;
+    right: 1rem;
+    top: 1rem;
+    left: 1rem;
+    text-align: center;
+  }
+  .sidebar-sticky img {
+    width: 200px;
   }
 }
 
