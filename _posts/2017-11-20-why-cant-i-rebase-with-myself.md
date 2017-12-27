@@ -3,7 +3,7 @@ layout: post
 title: Why can't I rebase with myself!
 ---
 
-> Why am I getting so many merge conflicts when I rebase? Why can't I rebase with myself!
+> Why am I getting so many merge conflicts when I rebase? Why can't I rebase with myself!<br>
 > &mdash; Colleague having a bad time
 
 I frequently find myself fixing other people's Git woes but this one was particularly messy.
