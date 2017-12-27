@@ -79,8 +79,9 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Open Sans", serif;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-size: xx-large;
+  letter-spacing: 5px;
 }
 
 /* Sidebar nav */
