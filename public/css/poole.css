@@ -171,6 +171,7 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   background-color: #f9f9f9;
+  overflow-x: auto;
 }
 pre code {
   padding: 0;
@@ -186,6 +187,7 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
+  background-color: inherit;
 }
 
 /* Gist via GitHub Pages */
