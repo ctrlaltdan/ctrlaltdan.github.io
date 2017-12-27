@@ -94,7 +94,8 @@ html {
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
-  text-decoration: dotted;
+  text-decoration: none;
+  color: #a6e22e;
 }
 .sidebar-nav-item.active {
   font-weight: bold;
