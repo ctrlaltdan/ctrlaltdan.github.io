@@ -7,7 +7,7 @@ So earlier in the week I was looking at refactoring some older code in our syste
 
 In short, the code looked like
 
-{% highlight cs %}
+{% highlight csharp %}
 switch(searchOperator)
 {
     case ">=":
@@ -27,7 +27,7 @@ After some trial and error I managed to come up with an extension method to enca
 
 Firstly I wrapped each property in a generic object.
 
-{% highlight cs %}
+{% highlight csharp %}
 public class RangeSearch
 {
     public SearchOperator? SearchOperator { get; }
@@ -51,7 +51,7 @@ I should mentioned SearchOperator is an enum local to my project.
 
 The search model passed to my repository now has a richer set of properties for searching. This eliminates the repeated use of fields such as RateValue and RateSearchOperator.
 
-{% highlight cs %}
+{% highlight csharp %}
 public class SearchCriteria
 {
     public Guid BorrowingParty { get; set; }
@@ -64,7 +64,7 @@ And this is where the magic happens.
 
 Now this could probably be tidied up to better fit your requirements but for my simple case, this worked a treat.
 
-{% highlight cs %}
+{% highlight csharp %}
 public static IQueryable WhereRangeSearch(this IQueryable source, Expression selector, RangeSearch rangeSearch)
 {
     if (!rangeSearch.HasValue)
@@ -97,7 +97,7 @@ public static IQueryable WhereRangeSearch(this IQueryable source, Expression sel
 
 So lastly we need to put it all together.
 
-{% highlight cs %}
+{% highlight csharp %}
 public Task SearchAsync(SearchCriteria searchCriteria)
 {
     return _context
@@ -111,6 +111,6 @@ public Task SearchAsync(SearchCriteria searchCriteria)
 
 This solution worked great for my team’s project and we managed to eliminate a few hundred lines of code in the process!
 
-The generated SQL looks pretty tidy too 😀
+The generated SQL looks pretty tidy too :D
 
-— Dan
+&mdash; Dan
