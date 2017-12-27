@@ -2,6 +2,4 @@
 layout: null
 ---
 {{ site.url }}
-{% for post in site.posts %}
-{{ site.url }}{{ post.url }}
-{% endfor %}
+{% for post in site.posts %}{{ site.url }}{{ post.url }}{% endfor %}
