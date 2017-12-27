@@ -1,33 +1,24 @@
 
+my:
+  title: 'CTRLALTDAN'
+  tagline: 'My Code'
+  description: 'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+  url: http://dubs999.github.io/
+  baseurl: /
+  
+permalink: pretty
+
+author:
+  name: 'Dan Warner'
+  url: https://ctrlaltdan.com/
+
+paginate: 5
+
+github:
+  repo: https://github.com/dubs999
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
-
-# Dependencies
-#markdown:         redcarpet
-#highlighter:      pygments
-
-# Permalinks
-#relative_permalinks: true
-#permalink: /:title/
-
-# Setup
-site:
-  title:            'CTRLALTDAN'
-  tagline:          'My Code'
-  description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-  url:              http://dubs999.github.io/
-  baseurl:          /
-  
-permalink:        pretty
-
-author:
-  name:           'Dan Warner'
-  url:            https://ctrlaltdan.com/
-
-paginate:         5
-
-github:
-  repo:           https://github.com/dubs999
