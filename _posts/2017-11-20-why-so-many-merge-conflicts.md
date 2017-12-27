@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why can't I rebase with myself!
+title: Why so many merge conflicts when I rebase?!
 ---
 
 > Why am I getting so many merge conflicts when I rebase? Why can't I rebase with myself!<br>
