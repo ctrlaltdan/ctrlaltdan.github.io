@@ -158,6 +158,13 @@ a.sidebar-nav-item:focus {
  *
  */
 
+h3.year {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
 ul.nostyle {
   list-style: none;
   margin-left: 0;
