@@ -79,7 +79,7 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: Consolas, "Courier New", Courier, monospace;
   font-size: 1.6rem;
   letter-spacing: 3px;
 }
