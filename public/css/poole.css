@@ -228,6 +228,23 @@ blockquote p:last-child {
   }
 }
 
+/* Exceptions */
+error {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: #bf616a;
+  border-left: .25rem solid #bf616a;
+}
+error p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 30em) {
+  error {
+    padding-right: 5rem;
+    padding-left: 1.25rem;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;

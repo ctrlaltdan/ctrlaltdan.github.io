@@ -39,7 +39,10 @@ there isn't many commits to look at so picking the last 5 should do the trick...
 $ git rebase HEAD~5
 ```
 
-> Commit abc123 is a merge but no -m option was given.
+<error>
+    <small><strong>ERROR</strong></small>
+    <p>Commit abc123 is a merge but no -m option was given.</p>
+</error>
 
 Interesting. Looking through the branch history highlighted the base commit was a merge commit.
 
