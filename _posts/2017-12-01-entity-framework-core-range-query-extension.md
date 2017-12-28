@@ -3,7 +3,7 @@ layout: post
 title: Entity Framework Core range query extension
 ---
 
-Earlier this the week I was refactoring some search logic in our system which added a whole heap of range queries using *Entity Framework*.
+Earlier this the week I was refactoring some search logic in our system which added a whole heap of range queries using **Entity Framework**.
 
 In short, the code looked like
 
