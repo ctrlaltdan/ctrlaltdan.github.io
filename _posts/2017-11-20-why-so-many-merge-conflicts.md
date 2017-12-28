@@ -52,13 +52,12 @@ don't want to be messed with.
 In fact, this is from the documentation:
 
 <info>
-    -p
-
-    --preserve-merges
-
-    Recreate merge commits instead of flattening the history by replaying commits a merge commit introduces. Merge conflict resolutions or manual amendments to merge commits are not preserved.
-
-    This uses the --interactive machinery internally, but combining it with the --interactive option explicitly is generally not a good idea unless you know what you are doing.
+    <p>-p</p>
+    <p>--preserve-merges</p>
+    <p>Recreate merge commits instead of flattening the history by replaying commits a merge
+    commit introduces. Merge conflict resolutions or manual amendments to merge commits are not preserved.</p>
+    <p>This uses the --interactive machinery internally, but combining it with the --interactive option
+    explicitly is generally not a good idea unless you know what you are doing.</p>
 </info>
 
 There's a far less complex way achieving the same end result.
