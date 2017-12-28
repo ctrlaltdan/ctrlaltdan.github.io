@@ -51,17 +51,19 @@ don't want to be messed with.
 
 In fact, this is from the documentation:
 
-> -p
->
-> --preserve-merges
->
-> Recreate merge commits instead of flattening the history by replaying commits a merge commit introduces. Merge conflict resolutions or manual amendments to merge commits are not preserved.
->
-> This uses the --interactive machinery internally, but combining it with the --interactive option explicitly is generally not a good idea unless you know what you are doing.
+<info>
+    -p
+
+    --preserve-merges
+
+    Recreate merge commits instead of flattening the history by replaying commits a merge commit introduces. Merge conflict resolutions or manual amendments to merge commits are not preserved.
+
+    This uses the --interactive machinery internally, but combining it with the --interactive option explicitly is generally not a good idea unless you know what you are doing.
+</info>
 
 There's a far less complex way achieving the same end result.
 
-We start by finding the common ancestor of our two branches. (`my_feature` and `master`).
+We start by **finding the common ancestor** of our two branches. (`my_feature` and `master`).
 
 ```
 $ git merge-base my_feature master

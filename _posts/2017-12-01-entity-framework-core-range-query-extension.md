@@ -118,6 +118,6 @@ public Task SearchAsync(SearchCriteria searchCriteria)
 
 This solution has worked great for my team’s project and we managed to eliminate a few hundred lines of code in the process!
 
-The generated SQL looks pretty tidy too :D
+Entity framework core generates some pretty tidy looking SQL too :D
 
 &mdash; Dan
