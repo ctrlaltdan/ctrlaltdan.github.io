@@ -3,31 +3,50 @@ layout: post
 title: Entity Framework Core range query extension
 ---
 
-So earlier in the week I was looking at refactoring some older code in our system which added a whole lot of range queries using Entity Framework.
+Earlier this the week I was refactoring some search logic in our system which added a whole heap of range queries using *Entity Framework*.
 
 In short, the code looked like
 
 {% highlight csharp %}
 switch(searchOperator)
 {
+    case "==":
+        query = query.Where(x => x.Property == foo);
+        break;
     case ">=":
         query = query.Where(x => x.Property >= foo);
         break;
-    case " x.Property <= foo);
+    case "<=":
+        query = query.Where(x => x.Property <= foo);
         break;
-    // ... cont
 }
 {% endhighlight %}
 
-You can imagine the above code repeated 5 or 6 times for various dates and values causing a rather bloated class with lots of repeated similar logic.
+You can imagine the above code repeated 5 or 6 times for various dates and values caused a rather bloated class with lots of similar
+core search logic. Code duplication like this is not ideal and I find it can be fairly fragile.
 
-Not ideal and after a bit of searching there isn’t much guidance for how to maintain common logic like this.
+After a bit of searching I didn't find much guidance for common search logic like this so I decided to hand crank my own!
 
-After some trial and error I managed to come up with an extension method to encapsulate the repeated logic.
+To start with I created a generic object which encapsulates the property, it's search value and it's search operator.
+The search criteria model I pass to my repository now has a richer set of properties for searching. 
 
-Firstly I wrapped each property in a generic object.
+This has also eliminated the repeated use of properties such as `nValue` and `nSearchOperator`.
 
 {% highlight csharp %}
+public class SearchCriteria
+{
+    public Guid BorrowingParty { get; set; }
+    public RangeSearch Created { get; set; } 
+    public RangeSearch LoanValue { get; set; } 
+}
+
+public enum SearchOperator
+{
+    EqualTo,
+    GreaterThanOrEqualTo,
+    LessThanOrEqualTo
+}
+
 public class RangeSearch
 {
     public SearchOperator? SearchOperator { get; }
@@ -47,22 +66,10 @@ public class RangeSearch
 }
 {% endhighlight %}
 
-I should mentioned SearchOperator is an enum local to my project.
+Now to finally tackle the mighty switch statement above.
 
-The search model passed to my repository now has a richer set of properties for searching. This eliminates the repeated use of fields such as RateValue and RateSearchOperator.
-
-{% highlight csharp %}
-public class SearchCriteria
-{
-    public Guid BorrowingParty { get; set; }
-    public RangeSearch Created { get; set; } 
-    public RangeSearch Value { get; set; } 
-}
-{% endhighlight %}
-
-And this is where the magic happens.
-
-Now this could probably be tidied up to better fit your requirements but for my simple case, this worked a treat.
+This could probably be tidied up to better fit your requirements but for my simple case, this Entity Framework
+extension works a treat.
 
 {% highlight csharp %}
 public static IQueryable WhereRangeSearch(this IQueryable source, Expression selector, RangeSearch rangeSearch)
@@ -95,7 +102,7 @@ public static IQueryable WhereRangeSearch(this IQueryable source, Expression sel
 }
 {% endhighlight %}
 
-So lastly we need to put it all together.
+And lastly lets put it all together.
 
 {% highlight csharp %}
 public Task SearchAsync(SearchCriteria searchCriteria)
@@ -104,12 +111,12 @@ public Task SearchAsync(SearchCriteria searchCriteria)
         .LoanSummary
         .Where(s => s.BorrowingParty == searchCriteria.BorrowingParty)
         .WhereRangeSearch(s => s.LoanCreatedDate, searchCriteria.Created)
-        .WhereRangeSearch(s => s.Quantity * s.SecurityPrice, searchCriteria.Value);
-        .ToListAsync();     
+        .WhereRangeSearch(s => s.Quantity * s.SecurityPrice, searchCriteria.LoanValue);
+        .ToListAsync();
 }
 {% endhighlight %}
 
-This solution worked great for my team’s project and we managed to eliminate a few hundred lines of code in the process!
+This solution has worked great for my team’s project and we managed to eliminate a few hundred lines of code in the process!
 
 The generated SQL looks pretty tidy too :D
 
