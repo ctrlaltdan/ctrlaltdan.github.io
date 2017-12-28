@@ -40,7 +40,7 @@ $ git rebase HEAD~5
 ```
 
 <error>
-    <small><strong>ERROR</strong></small>
+    <small><b>ERROR</b></small>
     <p>Commit abc123 is a merge but no -m option was given.</p>
 </error>
 
