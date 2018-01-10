@@ -17,7 +17,7 @@ How many engineers really understand what their 1 gigabit network is really capa
 Let’s start with the misnomer that 1 gigabit is anything close to 1 gigabyte.
 It’s a common misinterpretation and the shared use of `giga` is almost certainly to blame. 
 
-## In fact, 1 gigabit is equal to 125 megabytes. ##
+### In fact, 1 gigabit is equal to 125 megabytes. ###
 
 Doesn’t sound quite as plentiful anymore does it?
 
@@ -28,8 +28,8 @@ These headers allow for reliable transportation of data across our of network.
 Speaking of reliability, we should acknowledge [packet loss](https://en.wikipedia.org/wiki/Packet_loss) happens.
 [Sliding window](https://en.wikipedia.org/wiki/Sliding_window_protocol) limits the rate at which data is exchanged between sender and receiver and [exponential back off](https://en.wikipedia.org/wiki/Exponential_backoff) are all working against you to limit the usefulness of your bandwidth.
 
-The amount of useful remaining bandwidth is estimated to be around 40%.
-Around **50 megabytes per second** of our plentiful 1 gigabit network.
+The amount of useful remaining bandwidth is estimated to be around **40%**.
+That's approximately **50 megabytes per second** of our plentiful 1 gigabit network.
 
 You can imagine that once we begin to add HTTP, HTTPS or encryption into the mix we being to see our bandwidth go from 40% to 30% to 20% and that’s before we begin to talk about inefficient text based serialization such as XML and HTML.
 
