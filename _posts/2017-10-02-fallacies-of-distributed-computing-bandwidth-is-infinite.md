@@ -17,7 +17,7 @@ How many engineers really understand what their 1 gigabit network is really capa
 Let’s start with the misnomer that 1 gigabit is anything close to 1 gigabyte.
 It’s a common misinterpretation and the shared use of `giga` is almost certainly to blame. 
 
-##In fact, 1 gigabit is equal to 125 megabytes.##
+## In fact, 1 gigabit is equal to 125 megabytes. ##
 
 Doesn’t sound quite as plentiful anymore does it?
 
