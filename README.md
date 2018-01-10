@@ -1,6 +1,6 @@
 # A blog.
 
-https://dubs999.github.io
+https://www.ctrlaltdan.com/
 
 ## Mentions
 
