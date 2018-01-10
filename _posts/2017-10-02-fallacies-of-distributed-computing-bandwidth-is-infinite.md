@@ -3,6 +3,9 @@ layout: post
 title: Fallacies of distributed computing&#58; Bandwidth is infinite.
 ---
 
+> Ignorance of bandwidth limits on the part of traffic senders can result in bottlenecks over frequency-multiplexed media. <br>
+> &mdash; L Peter Deutsch ([Source](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing))
+
 It may seem obvious but how many developers do you know who wouldn’t give a second thought to the amount of bandwidth their systems use.
 
 5 years ago you may have dug deep to get a laptop with sufficient resources to run a few virtual machines.
