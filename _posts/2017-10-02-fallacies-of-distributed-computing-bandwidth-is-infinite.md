@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fallacies of distributed computing: Bandwidth is infinite.
+title: Fallacies of distributed computing&#58; Bandwidth is infinite.
 ---
 
 It may seem obvious but how many developers do you know who wouldn’t give a second thought to the amount of bandwidth their systems use.
