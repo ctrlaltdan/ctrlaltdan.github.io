@@ -3,7 +3,7 @@ layout: post
 title: Unable to Verify connection to Service Fabric cluster.
 ---
 
-This one caught me out today and it took a little while to diagnose the issue so I thought I'd share my experiences.
+This one caught me out today and it took a little while to diagnose the issue so I thought I'd share my experience.
 
 A little background:
 
@@ -15,7 +15,7 @@ Always one to try my hand at some hackery I gave writing a local build and deplo
 All was going swimmingly until my local deployment script stumbled across the following issue:
 
 ```
-> Unable to Verify connection to Service Fabric cluster.
+Unable to Verify connection to Service Fabric cluster.
 ```
 
 The local build tools I had written would recursively loop through a list of applications, jump in and out of a few functions
@@ -23,7 +23,7 @@ and dynamically load and run more scripts where needed.
 
 So for brevity this is something similar to what I had
 
-{% highlight bash %}
+{% highlight powershell %}
 Import-Module "$ModuleFolderPath\ServiceFabricSDK.psm1"
 Write-Host "Establish local cluster connection"
 [void](Connect-ServiceFabricCluster)
@@ -51,7 +51,9 @@ In fact, the line of code which breaks can be found in the `Publish-NewServiceFa
 
 Scroll down to `line 170` ish and you'll see the script attempt (and fail) to execute the following function
 
-> Test-ServiceFabricClusterConnection
+```
+Test-ServiceFabricClusterConnection
+```
 
 This had me stumped for a while as the code I was using to deploy had been largly copied and pasted from the given
 `Visual Studio` deployment template.
