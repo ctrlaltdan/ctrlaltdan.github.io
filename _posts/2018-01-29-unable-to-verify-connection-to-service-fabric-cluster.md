@@ -29,19 +29,19 @@ Write-Host "Establish local cluster connection"
 [void](Connect-ServiceFabricCluster)
 
 (Get-Content "${ENV:PROJECT_PATH}/manifest.json") `
-    | ConvertFrom-Json `
-    | ForEach-Object {
-		$project = $_.Name
-		$version = $_.Value
+  | ConvertFrom-Json `
+  | ForEach-Object {
+    $project = $_.Name
+    $version = $_.Value
         
-		Write-Host "Deploying ${project} version ${version}"
+    Write-Host "Deploying ${project} version ${version}"
 		
-		$PublishParameters = @{
-			# lots of parameters
-		}
-
-		Publish-NewServiceFabricApplication @PublishParameters
+    $PublishParameters = @{
+      # lots of parameters
     }
+
+    Publish-NewServiceFabricApplication @PublishParameters
+  }
 {% endhighlight %}
 
 When the `Publish-NewServiceFabricApplication` is called, the script throws the error **Unable to Verify connection to Service Fabric cluster.**
@@ -63,7 +63,7 @@ variable is incorrectly scoped.
 
 To fix the issue we just need to amend the code above slightly. 
 
-{% highlight bash %}
+{% highlight powershell %}
 [void](Connect-ServiceFabricCluster)
 $global:clusterConnection = $clusterConnection
 {% endhighlight %}
