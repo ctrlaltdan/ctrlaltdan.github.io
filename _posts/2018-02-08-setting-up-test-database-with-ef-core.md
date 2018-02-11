@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Setting up a test database with Entity Framework core is ridiculously easy
+title: Deploying a test database with Entity Framework core is ridiculously easy
 ---
 
 For years I've been advocating that you deploy your database in your integration tests.

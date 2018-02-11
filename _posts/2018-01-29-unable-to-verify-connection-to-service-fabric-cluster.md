@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Unable to Verify connection to Service Fabric cluster.
+title: Unable to Verify connection to Service Fabric cluster
 ---
 
 This one caught me out today and it took a little while to diagnose the issue so I thought I'd share my experience.
