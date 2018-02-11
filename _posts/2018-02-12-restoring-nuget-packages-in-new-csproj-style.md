@@ -11,9 +11,10 @@ You'll probably start by noticing that the dreaded `packages.config` file has di
 Personally I had always taken issue with this file. The amount of times I'd seen my team use the Visual Studio Nuget GUI
 tool and inadvertently install a plethora of unintended packages was frightening.
 
-Part of me doesn't blame them. While the command line syntax isn't particilarly difficult, it doesn't seem to be encouraged. 
+Part of me doesn't blame them. While the command line syntax isn't particilarly difficult, it doesn't seem to be encouraged
+and is rarely spoken of highly. 
 
-So the replacement is the `<PackageReference />` section of your `csproj` file.
+The replacement is the `<PackageReference />` section of your `csproj` file.
 
 I feel this is a much nicer way of working and really lowers the barrier to entry for developers.
 
@@ -22,11 +23,12 @@ files to include packages, check versions and references over using the GUI tool
 
 But for all this nice stuff one thing seemed a little odd.
 
-### Why aren't my nuget packages restoring to my Packages folder?
+#### Why aren't my nuget packages restoring to my Packages folder?
 
-The new location for nuget packages to get restored to is under `%USERPROFILE%\.nuget\packages`. I guess the reasoning
-behind this makes sence. I mean, why do you need to have multiple copies of the same packages across your development
-machine?
+Packages are now restored to `%USERPROFILE%\.nuget\packages`.
+
+I guess the reasoning behind this makes sence. I mean, why do you need to have multiple copies of the same packages
+across your development machine?
 
 Maybe I've just been burned too many times in the past but I sort of got to like the local `/Packages` cache. The exercise
 of deleting your `/bin`, `/obj` and `/Packages` folders when something's playing up all of a sudden becomes just that
