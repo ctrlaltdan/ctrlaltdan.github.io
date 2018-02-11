@@ -47,7 +47,7 @@ your `.sln` file's parent directory (when placed along side your `.sln` file).
 <configuration>
   <config>
     <add key="repositoryPath" value="..\Packages" />
-	<add key="globalPackagesFolder" value="..\Packages" />
+    <add key="globalPackagesFolder" value="..\Packages" />
   </config>
 </configuration>
 {% endhighlight %}
