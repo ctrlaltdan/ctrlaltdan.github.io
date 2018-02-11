@@ -5,7 +5,7 @@ title: Using localdb with VSTS
 
 Today I had my devops hat on and got to work with `Visual Studio Team Services` automated builds.
 
-I was really hoping that the default `VS Hosted` build agent had a copy of `SQL Server` or `SQL Express` installed
+I was really hoping that the default `Hosted VS2017` build agent had a copy of `SQL Server` or `SQL Express` installed
 so that my integration test library would be able to deploy and execute a number of tests.
 
 <error>
