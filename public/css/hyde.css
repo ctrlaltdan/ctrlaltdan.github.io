@@ -56,8 +56,11 @@ html {
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,1);
   background-color: #202020;
+  background: url(/images/sidebar.jpg);
+  background-position: center center;
+  background-size: cover;
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -89,13 +92,13 @@ html {
   margin-bottom: 1rem;
 }
 .sidebar-nav-item {
-  display: block;
+  display: inline-block;
   line-height: 1.75;
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: none;
-  color: #a6e22e;
+  border-bottom: 1px solid #fff;
 }
 .sidebar-nav-item.active {
   font-weight: bold;
