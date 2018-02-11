@@ -58,7 +58,7 @@ html {
   padding: 2rem 1rem;
   color: rgba(255,255,255,1);
   background-color: #202020;
-  background: url(/images/sidebar.jpg);
+  background: url(/public/images/sidebar.jpg);
   background-position: center center;
   background-size: cover;
 }
