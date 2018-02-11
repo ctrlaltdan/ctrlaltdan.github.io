@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Restoring nuget packages to a local Packages folder again! 
+title: Restoring NuGet packages to a local Packages folder again! 
 ---
 
 I'm a really big fan of the new slim `csproj` files but bundled in with this super sleek `XML` markup is a sneaky change
-to the way Nuget packages are loaded.
+to the way NuGet packages are loaded.
 
 You'll probably start by noticing that the dreaded `packages.config` file has disappeared! Hooray!
 
-Personally I had always taken issue with this file. The amount of times I'd seen my team use the Visual Studio Nuget GUI
+Personally I had always taken issue with this file. The amount of times I'd seen my team use the Visual Studio NuGet GUI
 tool and inadvertently install a plethora of unintended packages was frightening.
 
 Part of me doesn't blame them. While the command line syntax isn't particilarly difficult, it doesn't seem to be encouraged
@@ -23,7 +23,7 @@ files to include packages, check versions and references over using the GUI tool
 
 But for all this nice stuff one thing seemed a little odd.
 
-#### Why aren't my nuget packages restoring to my Packages folder?
+### Why aren't my NuGet packages restoring to my Packages folder?
 
 Packages are now restored to `%USERPROFILE%\.nuget\packages`.
 
@@ -31,11 +31,10 @@ I guess the reasoning behind this makes sence. I mean, why do you need to have m
 across your development machine?
 
 Maybe I've just been burned too many times in the past but I sort of got to like the local `/Packages` cache. The exercise
-of deleting your `/bin`, `/obj` and `/Packages` folders when something's playing up all of a sudden becomes just that
-little bit more difficult.
+of deleting your `/bin`, `/obj` and `/Packages` folders when something's playing up becomes that little bit more difficult.
 
 Turns out you can restore this functionality if you wish to. If you're familiar with `nuget.config` files then you'll be
-pleased to hear it's as simple as adding the new config key `globalPackagesFolder`.
+pleased to hear it's as simple as adding the new config key `globalPackagesFolder` to the `<config>` section.
 
 For those of you who aren't, the `nuget.config` file is a simple file you can place along side your `*.sln` file to
 specify a number of configuration for your team project.
