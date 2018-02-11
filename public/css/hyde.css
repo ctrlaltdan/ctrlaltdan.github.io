@@ -59,7 +59,7 @@ html {
   color: rgba(255,255,255,1);
   background-color: #202020;
   background: url(/public/images/sidebar.jpg);
-  background-position: center center;
+  background-position: left;
   background-size: cover;
 }
 @media (min-width: 48em) {
