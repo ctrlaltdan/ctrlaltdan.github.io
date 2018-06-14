@@ -8,8 +8,7 @@ Today I came across a really annoying issue which practically wiped out my whole
 I was undertaking an ambitious project whereby I'd map some pre-existing SQL tables to a new set of domain classes when I came across the following error...
 
 <error>
-    <small><b>System.Data.SqlClient.SqlException :</b></small>
-    Invalid column name 'OwnerId1'.<br/>
+    <b>System.Data.SqlClient.SqlException :</b> Invalid column name 'OwnerId1'.<br/>
     at System.Data.SqlClient.SqlCommand.&lt;&gt;c.&lt;ExecuteDbDataReaderAsync&gt;b__180_0(Task`1 result)<br/>
     at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()<br/>
     at System.Threading.Tasks.Task.Execute()
