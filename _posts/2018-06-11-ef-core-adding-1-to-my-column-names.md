@@ -86,7 +86,7 @@ public class VehicleContext : DbContext
 
 So just to be clear this is what the SQL table would look if you were to allow Entity Framework to deploy the above domain model.
 
-<img src="/images/posts/ef-column1.png"/>
+<img src="/public/images/posts/ef-column1.png"/>
 
 I never created a property called `OwnerId1`?!
 
