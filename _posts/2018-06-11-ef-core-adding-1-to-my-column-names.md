@@ -10,9 +10,9 @@ I was undertaking an ambitious project whereby I'd map some pre-existing SQL tab
 <error>
     <small><b>System.Data.SqlClient.SqlException :</b></small>
     Invalid column name 'OwnerId1'.<br/>
-   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)<br/>
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()<br/>
-   at System.Threading.Tasks.Task.Execute()
+    at System.Data.SqlClient.SqlCommand.&lt;&gt;c.&lt;ExecuteDbDataReaderAsync&gt;b__180_0(Task`1 result)<br/>
+    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()<br/>
+    at System.Threading.Tasks.Task.Execute()
 </error>
 
 For some context the domain classes I wrote were abstract with navigation properties on both the abstract classes, as well as the derrived classes.
