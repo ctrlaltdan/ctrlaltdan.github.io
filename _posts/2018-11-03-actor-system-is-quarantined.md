@@ -27,6 +27,10 @@ So how can we hook into the cluster chat to determine when I've been quarantined
 Enter: the terminator.
 
 {% highlight csharp %}
+using Akka.Actor;
+using Akka.Event;
+using Akka.Remote;
+
 public class Terminator : ReceiveActor
 {
     public Terminator()
