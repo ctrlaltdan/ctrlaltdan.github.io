@@ -112,6 +112,9 @@ strong {
   color: #303030;
 }
 
+s, strike, del {
+  color: #aaa;
+}
 
 /* Lists */
 ul, ol, dl {
