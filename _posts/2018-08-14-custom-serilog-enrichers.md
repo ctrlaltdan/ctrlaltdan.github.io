@@ -86,7 +86,9 @@ var logger = new LoggerConfiguration()
 The alternative way is to import your enricher using an `appsettings.json` file using the `Serilog.Settings.Configuration` package.
 
 This package will scan all assemblies listed in the `Using` property (as well as any assemblies belonging to the `Serilog` namespace)
-for methods extending the `LoggerEnrichmentConfiguration` object. If your enricher isn't being applied then double check the `Using` property
+for methods extending the `LoggerEnrichmentConfiguration` object.
+
+If your enricher isn't being applied then double check the `Using` property
 matches the `dll` where your extension method resides.  
 
 {% highlight csharp %}
@@ -106,5 +108,8 @@ matches the `dll` where your extension method resides.
 }
 {% endhighlight %}
 
+### Done!
+
+How painless was that?
 
 &mdash; Dan
