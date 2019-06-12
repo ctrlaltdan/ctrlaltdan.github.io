@@ -35,7 +35,7 @@ public class Terminator : ReceiveActor
 {
     public Terminator()
     {
-        Receive<QuarantinedEvent>(m => 
+        Receive<ThisActorSystemQuarantinedEvent>(m => 
         {
             Actors.Instance.Shutdown();
         });
@@ -43,7 +43,7 @@ public class Terminator : ReceiveActor
 }
 {% endhighlight %}
 
-Terminator in my case is a simple Actor ready to receive `QuarantinedEvent` messages delivered to my unhealthy cluster node.
+Terminator in my case is a simple Actor ready to receive `ThisActorSystemQuarantinedEvent` messages delivered to my unhealthy cluster node.
 
 Here I'm using a small wrapper around the ActorSystem called `Actors`. This object gives me some control around the actor system lifecycle and I use it to invoke the `CoordinatedShutdown` method as recommended by the Akka.net team.
 
@@ -53,7 +53,7 @@ Let's add the following to our actor system setup.
 
 {% highlight csharp %}
 var arnold = system.ActorOf(Props.Create<Terminator>());
-system.EventStream.Subscribe(arnold, typeof(QuarantinedEvent));
+system.EventStream.Subscribe(arnold, typeof(ThisActorSystemQuarantinedEvent));
 {% endhighlight %}
 
 And that's all that's needed.
